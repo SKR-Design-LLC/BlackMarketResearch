@@ -1,0 +1,308 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+@import 'motion-ui';
+@import 'global/_typography';
+// Global styles
+@include foundation-global-styles;
+@include foundation-forms;
+@include foundation-typography;
+
+// Grids (choose one)
+@include foundation-xy-grid-classes;
+@include foundation-grid;
+@include foundation-flex-grid;
+
+// Generic components
+@include foundation-button;
+@include foundation-button-group;
+@include foundation-close-button;
+@include foundation-label;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-switch;
+@include foundation-table;
+//Basic components
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-callout;
+@include foundation-card;
+@include foundation-dropdown;
+@include foundation-pagination;
+@include foundation-tooltip;
+
+// Containers
+@include foundation-accordion;
+@include foundation-media-object;
+@include foundation-orbit;
+@include foundation-responsive-embed;
+@include foundation-tabs;
+@include foundation-thumbnail;
+// Menu-based containers
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-accordion-menu;
+@include foundation-drilldown-menu;
+@include foundation-dropdown-menu;
+
+// Layout components
+@include foundation-off-canvas;
+@include foundation-reveal;
+@include foundation-sticky;
+@include foundation-title-bar;
+@include foundation-top-bar;
+
+// Helpers
+@include foundation-float-classes;
+@include foundation-flex-classes;
+@include foundation-visibility-classes;
+@include foundation-prototype-classes;
+
+// Motion UI
+@include motion-ui-transitions;
+@include motion-ui-animations;
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.flex_container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 3rem;
+}
+
+header.top_header {
+
+  background: $white;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+
+  img {
+    display: block;
+    width: 17.625rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h1 {
+    font-family:'PT Sans Narrow', sans-serif;
+    width: 100%;
+    display: inline-block;
+    font-size: 1.906rem;
+    text-align: center;
+    color:$black;
+    vertical-align: baseline;
+    span {
+      display: inline-block;
+      vertical-align: baseline;
+      -webkit-transform: scaleX(-1) rotate(360deg);
+      -ms-transform: scaleX(-1) rotate(360deg);
+          transform: scaleX(-1) rotate(360deg);
+    }
+  }
+}
+  .grey_band {
+
+    @include clearfix;
+    background-color: $medium-gray;
+    padding: .6rem .5rem .7rem .5rem;
+    margin-top: 20px;
+
+    a {
+      color: $white;
+        &:hover {
+          color: $light-gray;
+          text-decoration: underline;
+        }
+    }
+
+}
+nav {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+
+      @include breakpoint(medlarge) {
+        width: 70%;
+        margin: 0 auto;
+        flex-direction: row;
+      }
+      ul {
+
+        list-style: none;
+        margin-bottom: 0;
+        font-family: 'PT Sans Narrow', sans-serif;
+          li {
+            display: block;
+            margin-right: 2rem;
+            margin-bottom: 0;
+            font-size: 1.750rem;
+            text-transform: uppercase;
+
+            @include breakpoint(medlarge) {
+              display: inline-block;
+            }
+            a {
+              text-decoration: none;
+              vertical-align: text-top;
+              &:hover {
+                color: $light-gray;
+              }
+            }
+          }
+
+      }
+
+      ul#main-nav {
+        @include breakpoint(medlarge) {
+          li:first-child {
+            margin-left: -.4rem;
+          }
+
+          &, li:last-child {
+            margin: 0
+          }
+        }
+
+
+      }
+
+      ul#social-nav {
+
+        @include breakpoint(medlarge) {
+          display: flex;
+          justify-content:flex-end;
+          margin-left: auto;
+        }
+        li > a {
+          color: $light-gray;
+            &:hover {
+              color: $white;
+            }
+        }
+        li:last-child {
+          margin: 0
+        }
+
+      }
+
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+  h3:nth-of-type(1) {
+    margin-top: 1rem;
+  }
+
+  @include breakpoint(medlarge) {
+    width: 70%;
+  }
+}
+
+
+  .shows, .news, .endorsement, .albums, .awards {
+    margin-bottom: 4rem;
+  }
+
+  #edit_about, #edit_albums, #edit_shows {
+    header {
+      padding-top: 4rem;
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+
+  }
+
+.sitmap__nav {
+  margin-bottom: 4rem;
+}
+
+footer {
+  margin-top: 4rem;
+}
+
+figcaption.video {
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+  display: block;
+  position: relative;
+}
+
+figcaption {
+  font-style: italic;
+}
+
+figure.video_no_graghic {
+  padding:0;
+  display: initial;
+  position: relative;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+  height: none;
+  iframe {
+    position: relative;
+  }
+  iframe {
+    width:100%;
+  }
+  figcaption {
+    padding-top: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.video_with_play {
+  padding-bottom: 110%;
+  @include breakpoint(medlarge) {
+    padding-bottom: 70%;
+  }
+
+}
+#play {
+  background: black;
+  opacity:.5;
+  border-radius: 50% / 10%;
+  color: #FFFFFF;
+  font-size: 1em; /* change this to change size */
+  height: 3em;
+  left: 31%;
+  top: 30%;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  text-indent: 0.1em;
+  transition: all 150ms ease-out;
+  width: 4em;
+  &:hover {
+    background: red;
+    opacity:1;
+  }
+  &::before {
+    background: inherit;
+    border-radius: 5% / 50%;
+    bottom: 9%;
+    content: "";
+    left: -5%;
+    position: absolute;
+    right: -5%;
+    top: 9%;
+  }
+
+  &::after {
+    border-style: solid;
+    border-width: 1em 0 1em 1.732em;
+    border-color: transparent transparent transparent rgba(255, 255, 255, 0.75);
+    content: ' ';
+    font-size: 0.75em;
+    height: 0;
+    margin: -1em 0 0 -0.75em;
+    top: 50%;
+    position: absolute;
+    width: 0;
+  }
+}
