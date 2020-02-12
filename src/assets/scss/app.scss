@@ -74,7 +74,7 @@
   padding-bottom: 3rem;
 }
 
-header.top_header {
+header.header__top {
 
   background: $white;
   padding-top: 2rem;
@@ -104,8 +104,7 @@ header.top_header {
     }
   }
 }
-  .grey_band {
-
+.grey_band__nav {
     @include clearfix;
     background-color: $medium-gray;
     padding: .6rem .5rem .7rem .5rem;
@@ -156,8 +155,9 @@ nav {
 
       }
 
-      ul#main-nav {
+      ul#main_nav {
         @include breakpoint(medlarge) {
+
           li:first-child {
             margin-left: -.4rem;
           }
@@ -166,11 +166,9 @@ nav {
             margin: 0
           }
         }
-
-
       }
 
-      ul#social-nav {
+      ul#social_nav {
 
         @include breakpoint(medlarge) {
           display: flex;
@@ -304,5 +302,25 @@ figure.video_no_graghic {
     top: 50%;
     position: absolute;
     width: 0;
+  }
+}
+
+// EPK
+.top_images {
+  padding: 4rem;
+  background: white;
+}
+
+.two_col__container {
+  display: grid;
+  grid-template-columns: 46% 46%;
+  grid-row: 1;
+  grid-column-gap: 8%;
+
+  .first_col {
+
+  }
+  .second_col {
+
   }
 }
