@@ -68,6 +68,30 @@
   box-sizing: border-box;
 }
 
+// Accessiblilty
+#skiptocontent a {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  background-color: #B22222;
+  color: $white;
+  z-index: 20;
+  &:focus {
+    position:relative;
+    width:100vw;
+    left:0;
+    height:auto;
+    padding: .5rem 1rem;
+    display: block;
+  }
+  &:hover, &:active {
+    color: #D6D6D6;
+  }
+}
+
 .flex_container {
   display: flex;
   flex-direction: column;
@@ -78,7 +102,6 @@ header.header__top {
 
   background: $white;
   padding-top: 2rem;
-  margin-bottom: 2rem;
 
   img {
     display: block;
@@ -192,6 +215,7 @@ nav {
 .main {
   width: 80%;
   margin: 0 auto;
+  padding-top: 2.25rem;
   h3:nth-of-type(1) {
     margin-top: 1rem;
   }
